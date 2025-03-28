@@ -105,23 +105,6 @@
                                     </includes>
                                 </fileset>
                                 <fileset>
-                                    <directory>target</directory>
-                                    <includes>
-                                        <include>**/*</include>
-                                    </includes>
-                                </fileset>
-                            </filesets>
-                        </configuration>
-                    </execution>
-                    <execution>
-                        <id>delete_merged_spec.yaml</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>clean</goal>
-                        </goals>
-                        <configuration>
-                            <filesets>
-                                <fileset>
                                     <directory>
                                         ${project.build.sourceDirectory}/../resources/openapi/api
                                     </directory>
@@ -153,9 +136,9 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-<!--
-                            <templateDirectory>${project.basedir}/../_templates</templateDirectory>
--->
+                            <!--
+                                                        <templateDirectory>${project.basedir}/../_templates</templateDirectory>
+                            -->
                             <skipValidateSpec>true</skipValidateSpec>
                             <inputSpecRootDirectory>${project.basedir}/src/main/resources/openapi
                             </inputSpecRootDirectory>
