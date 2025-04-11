@@ -7,15 +7,18 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
 @RequestMapping("")
 public class CustomerController implements DefaultApi {
 
+    private List<Customer> customers= new ArrayList<>();
+
     @Override
     public ResponseEntity<List<Customer>> customersGet(){
-        return null;
+        return ResponseEntity.ok(customers);
     }
 
     @Override

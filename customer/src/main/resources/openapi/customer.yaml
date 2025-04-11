@@ -152,3 +152,5 @@ components:
         name:
           type: string
           description: A vevő neve.
+          x-field-extra-annotation: '@hu.oe.yokudlela.customer.validation.NameExists(message="error.customer.name.exists")'
+
