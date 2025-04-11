@@ -33,6 +33,6 @@ class NameExistsValidator implements ConstraintValidator<NameExists, String> {
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return true;
+        return false;
     }
 }
