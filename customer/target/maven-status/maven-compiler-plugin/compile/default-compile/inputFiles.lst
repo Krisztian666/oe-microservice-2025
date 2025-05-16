@@ -1,0 +1,10 @@
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/DataValidationException.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/customer/generated/rest/model/Customer.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/BusinessException.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/customer/generated/rest/api/DefaultApi.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/ApiError.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/customer/generated/rest/model/CustomersIdGet404Response.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/rest/CustomerController.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/GlobalExceptionHandler.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/CustomerApp.java
+/home/krisztian/src/oe-microservice-2025/customer/src/main/java/hu/oe/yokudlela/customer/validation/NameExists.java
