@@ -336,26 +336,13 @@
                 </dependencies>
                 <executions>
                     <execution>
-                        <id>mdm</id>
                         <phase>none</phase>
                         <goals>
                             <goal>hbm2java</goal>
                         </goals>
-                        <configuration>
-                            <revengFile>src/main/resources/hibernate.reveng-mdm.xml</revengFile>
-                            <packageName>hu.mk.kiaf.dinotransaction.generated.entity</packageName>
-                            <propertyFile>src/main/resources/_hibernate-mdm.properties</propertyFile>
-                            <outputDirectory>src/main/java</outputDirectory>
-                            <templatePath>../_templates/hibernate</templatePath>
-                            <ejb3>true</ejb3>
-                            <jdk5>true</jdk5>
-                        </configuration>
                     </execution>
-
                 </executions>
                 <configuration>
-
-
                     <templatePath>../_templates/hibernate</templatePath>
                     <packageName>hu.oe.yokudlela.customer.generated.entity</packageName>
 
