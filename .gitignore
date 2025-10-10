@@ -3,3 +3,4 @@
 /.idea/
 /customer/src/main/java/.openapi-generator/
 /customer/target/
+/customer/hu/oe/yokudlela/customer/generated/
