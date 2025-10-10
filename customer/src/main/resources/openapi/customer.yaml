@@ -48,6 +48,21 @@ paths:
               example:
                 id: 4
                 name: Horváth Gábor
+        "400":
+          description: A vevő már létezik
+          content:
+            application/json:
+              schema:
+                type: object
+                schema:
+                  $ref: "#/components/schemas/ApiError"
+                example:
+                  path: "/customers"
+                  message: "error.validation"
+                  errors:
+                      - "error.customer.name.exists"
+
+
   /customers/{id}:
     get:
       summary: Vevő lekérdezése
@@ -153,4 +168,13 @@ components:
           type: string
           description: A vevő neve.
           x-field-extra-annotation: '@hu.oe.yokudlela.customer.validation.NameExists(message="error.customer.name.exists")'
-
+    ApiError:
+      type: object
+      properties:
+        path:
+          type: string
+        message:
+          type: string
+        errors:
+          type: array
+          items: string
