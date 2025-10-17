@@ -23,6 +23,5 @@
     <#if pojo.hasMetaAttribute(property, "field-annotation")><#list property.metaAttributes["field-annotation"].values as ann>${ann}</#list></#if>
     <#include "GetPropertyAnnotation.ftl"/>
     ${pojo.getFieldModifiers(property)} ${pojo.getJavaTypeName(property, jdk5)} ${c2j.keyWordCheck(property.name)}<#if pojo.hasFieldInitializor(property, jdk5)> = ${pojo.getFieldInitialization(property, jdk5)}</#if>;
-    public static final String FIELD_${c2j.keyWordCheck(property.name)?upper_case}="${c2j.keyWordCheck(property.name)}";
 </#if>
 </#list>

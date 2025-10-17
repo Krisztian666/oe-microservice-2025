@@ -21,7 +21,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Customer"
+                  $ref: "#/components/schemas/CustomerResponse"
               example:
               - id: 1
                 name: Kovács János
@@ -37,17 +37,17 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Customer"
+              $ref: "#/components/schemas/CustomerRequest"
       responses:
         "201":
           description: A vevő sikeresen hozzáadva
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Customer"
+                $ref: "#/components/schemas/IdModel"
               example:
                 id: 4
-                name: Horváth Gábor
+
   /customers/{id}:
     get:
       summary: Vevő lekérdezése
@@ -57,7 +57,7 @@ paths:
         name: id
         required: true
         schema:
-          type: integer
+          type: string
         description: A vevő egyedi azonosítója.
       responses:
         "200":
@@ -65,7 +65,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Customer"
+                $ref: "#/components/schemas/CustomerResponse"
               example:
                 id: 1
                 name: Kovács János
@@ -87,21 +87,21 @@ paths:
         name: id
         required: true
         schema:
-          type: integer
+          type: string
         description: A vevő egyedi azonosítója.
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/Customer"
+              $ref: "#/components/schemas/CustomerRequest"
       responses:
         "200":
           description: A vevő sikeresen módosítva
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Customer"
+                $ref: "#/components/schemas/IdModel"
               example:
                 id: 1
                 name: Kovács Zoltán
@@ -123,7 +123,7 @@ paths:
         name: id
         required: true
         schema:
-          type: integer
+          type: string
         description: A vevő egyedi azonosítója.
       responses:
         "204":
@@ -140,17 +140,27 @@ paths:
                     example: Vevő nem található
 components:
   schemas:
-    Customer:
+    IdModel:
       type: object
-      required:
-      - id
-      - name
       properties:
         id:
-          type: integer
-          description: A vevő egyedi azonosítója.
+          type: string
+
+    CustomerRequest:
+      type: object
+      required:
+      - name
+      properties:
         name:
           type: string
           description: A vevő neve.
           x-field-extra-annotation: '@hu.oe.yokudlela.customer.validation.NameExists(message="error.customer.name.exists")'
+        description:
+          type: string
+          description: Egy leírás
 
+    CustomerResponse:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/IdModel'
+        - $ref: '#/components/schemas/CustomerRequest'

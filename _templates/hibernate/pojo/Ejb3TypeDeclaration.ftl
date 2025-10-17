@@ -15,10 +15,10 @@
 -->
 <#if ejb3?if_exists>
     <#if pojo.isComponent()>
-        @lombok.Builder @lombok.AllArgsConstructor @lombok.NoArgsConstructor @lombok.Getter @lombok.Setter
+        @lombok.Builder @lombok.AllArgsConstructor @lombok.NoArgsConstructor @lombok.Getter @lombok.Setter @lombok.experimental.FieldNameConstants
         @${pojo.importType("jakarta.persistence.Embeddable")}
     <#else>
-        @lombok.Builder @lombok.AllArgsConstructor @lombok.NoArgsConstructor @lombok.Getter @lombok.Setter
+        @lombok.Builder @lombok.AllArgsConstructor @lombok.NoArgsConstructor @lombok.Getter @lombok.Setter @lombok.experimental.FieldNameConstants
         @${pojo.importType("jakarta.persistence.Entity")}
         @${pojo.importType("jakarta.persistence.Table")}(name="${clazz.table.name}"
         <#if clazz.table.schema?exists>

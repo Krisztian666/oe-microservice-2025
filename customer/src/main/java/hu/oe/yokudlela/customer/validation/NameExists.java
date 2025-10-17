@@ -1,11 +1,13 @@
 package hu.oe.yokudlela.customer.validation;
 
+import hu.oe.yokudlela.rdbms.CustomerRepository;
 import jakarta.validation.Constraint;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 import jakarta.validation.Payload;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.annotation.*;
 
@@ -24,6 +26,9 @@ public @interface NameExists {
 @RequiredArgsConstructor
 class NameExistsValidator implements ConstraintValidator<NameExists, String> {
 
+    @Autowired
+    CustomerRepository customerRepository;
+
     String message;
 
     @Override
@@ -33,6 +38,6 @@ class NameExistsValidator implements ConstraintValidator<NameExists, String> {
 
     @Override
     public boolean isValid(String value, ConstraintValidatorContext context) {
-        return false;
+        return !customerRepository.existsByName(value);
     }
 }

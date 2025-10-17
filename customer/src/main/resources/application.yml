@@ -3,6 +3,11 @@ server:
   name: customer
 
 
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/customer
+    username: oeuser
+    password: password
 
 
 springdoc:

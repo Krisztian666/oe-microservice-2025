@@ -1,5 +1,5 @@
 services:
-  postgis:
+  postgres:
     container_name: postgres
     image: postgres:17.5
     hostname: postgis
