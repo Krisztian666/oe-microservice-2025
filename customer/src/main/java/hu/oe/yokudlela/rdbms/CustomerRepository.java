@@ -9,5 +9,5 @@ public interface CustomerRepository extends CrudRepository<Customer, UUID> {
 
     boolean existsByName(String pName);
 
-    Object getById(UUID id);
+    Customer getById(UUID id);
 }

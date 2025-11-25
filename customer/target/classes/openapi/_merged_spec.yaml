@@ -1,7 +1,7 @@
 ---
 servers:
 - url: "http://localhost:8080"
-openapi: "3.0.0"
+openapi: "3.0.1"
 paths:
   /customers/{id}:
     $ref: "./customer.yaml#/paths/~1customers~1{id}"

@@ -1,10 +1,11 @@
 hu/oe/yokudlela/customer/generated/entity/Customer$CustomerBuilder.class
 hu/oe/yokudlela/customer/generated/rest/model/CustomersIdGet404Response.class
 hu/oe/yokudlela/customer/generated/rest/model/CustomerRequest.class
-hu/oe/yokudlela/customer/generated/rest/model/CustomerModel$CustomerModelBuilder.class
 hu/oe/yokudlela/customer/generated/entity/Customer$Fields.class
 hu/oe/yokudlela/customer/generated/rest/model/IdModel$IdModelBuilder.class
-hu/oe/yokudlela/customer/generated/rest/model/CustomerModel.class
+hu/oe/yokudlela/iam/openapi/OpenApiConfiguration.class
+hu/oe/yokudlela/iam/security/CustomJwtAuthenticationConverter.class
+hu/oe/yokudlela/iam/security/SecurityConfig.class
 hu/oe/yokudlela/AppConfig$2.class
 hu/oe/yokudlela/customer/generated/entity/Customer.class
 hu/oe/yokudlela/GlobalExceptionHandler.class

@@ -4,6 +4,8 @@ import hu.oe.yokudlela.customer.generated.entity.Customer;
 import hu.oe.yokudlela.customer.generated.rest.api.DefaultApi;
 import hu.oe.yokudlela.customer.generated.rest.model.*;
 import hu.oe.yokudlela.rdbms.CustomerRepository;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import org.modelmapper.ModelMapper;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -14,6 +16,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+
+@OpenAPIDefinition(
+        security = @SecurityRequirement(name = "BearerAuth")
+)
 @RestController
 @RequestMapping("")
 public class CustomerController implements DefaultApi {

@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.0.1
 info:
   title: Vevő Nyilvántartás API
   description: "API a vevők nyilvántartására, ahol minden vevőhöz egyedi azonosító\
@@ -13,9 +13,12 @@ paths:
     get:
       summary: Vevők listázása
       description: Lekérdezi az összes vevőt.
+      security:
+        - BearerAuth: [ ]
+      x-operation-extra-annotation: '@RolesAllowed("view")'
       responses:
         "200":
-          description: A vevők sikeresen lekérdezve
+          description: A vevők  sikeresen lekérdezve
           content:
             application/json:
               schema:
@@ -32,6 +35,9 @@ paths:
     post:
       summary: Új vevő hozzáadása
       description: Új vevőt ad hozzá a nyilvántartáshoz.
+      security:
+        - BearerAuth: [ ]
+      x-operation-extra-annotation: '@RolesAllowed("edit")'
       requestBody:
         required: true
         content:
@@ -52,6 +58,9 @@ paths:
     get:
       summary: Vevő lekérdezése
       description: Lekérdezi egy adott vevőt az ID alapján.
+      security:
+        - BearerAuth: [ ]
+      x-operation-extra-annotation: '@RolesAllowed("view")'
       parameters:
       - in: path
         name: id
@@ -82,6 +91,9 @@ paths:
     put:
       summary: Vevő módosítása
       description: Módosítja a vevő nevét az ID alapján.
+      security:
+        - BearerAuth: [ ]
+      x-operation-extra-annotation: '@RolesAllowed("edit")'
       parameters:
       - in: path
         name: id
@@ -118,6 +130,9 @@ paths:
     delete:
       summary: Vevő törlése
       description: Törli a vevőt az ID alapján.
+      security:
+        - BearerAuth: [ ]
+      x-operation-extra-annotation: '@RolesAllowed("edit")'
       parameters:
       - in: path
         name: id
@@ -139,6 +154,12 @@ paths:
                     type: string
                     example: Vevő nem található
 components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
   schemas:
     IdModel:
       type: object
@@ -164,3 +185,5 @@ components:
       allOf:
         - $ref: '#/components/schemas/IdModel'
         - $ref: '#/components/schemas/CustomerRequest'
+security:
+  - BearerAuth: []
