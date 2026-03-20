@@ -1,4 +1,4 @@
-FROM openjdk:21
+FROM eclipse-temurin:21-jdk-alpine
 ENV LANG C.UTF-8
 
 RUN mkdir -p /opt

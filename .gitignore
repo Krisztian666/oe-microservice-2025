@@ -2,5 +2,6 @@
 /customer/src/main/resources/openapi/_merged_spec.yaml
 /.idea/
 /customer/src/main/java/.openapi-generator/
+/customer/src/main/java/.openapi-generator/
 /customer/target/
 /customer/hu/oe/yokudlela/customer/generated/
